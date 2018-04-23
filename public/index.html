@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <title>Vue JS 101</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <button v-on:click="count(2)">Add</button>
+    <p>{{ counter }}</p>
+    <p v-on:mouseMove='updateCoordinates'>Coordinates: x: {{ x }} y:{{ y }} - <span v-on:mousemove.stop="">DEAD SPOT</span></p>
+    <input type="text" name="" id="">
+  </div>
+
+  <script src="../src/app.js"></script>
+</body>
+</html>
