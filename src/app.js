@@ -1,11 +1,19 @@
 new Vue ({
   el: '#app',
   data: {
-    link: 'http://google.com'
+    value: 0
   },
-  methods: {
-    changeLink: function() {
-      this.link = 'http://apple.com';
+  computed: {
+    result() {
+      return this.value > 37 ? 'Done' : 'Not there yet';
+    }
+  },
+  watch: {
+    result: function(value) {
+      let bind = this;
+      setTimeout(function() {
+        bind.value = 0;
+      },5000);
     }
   }
 });
