@@ -10,42 +10,11 @@
 
 <body>
 
-  <div id="exercise">
-      <!-- 1) Show an alert when the Button gets clicked -->
-      <div>
-          <button v-on:click="alertTrigger">Show Alert</button>
-      </div>
-      <!-- 2) Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value) -->
-      <div>
-          <input type="text" v-on:keydown='onKeydown'>
-          <p>{{ value }}</p>
-      </div>
-      <!-- 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key -->
-      <div>
-          <input type="text" v-on:keydown.enter='onKeydownEnter'>
-          <p>{{ valueEn }}</p>
-      </div>
-  </div>
-
-
-
-<!-- Instructor's solution -->
-
-  <div id="exercise">
-      <!-- 1) Show an alert when the Button gets clicked -->
-      <div>
-          <button v-on:click="alertMe">Show Alert</button>
-      </div>
-      <!-- 2) Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value) -->
-      <div>
-          <input type="text" v-on:keydown="value = $event.target.value">
-          <p>{‌{ value }}</p>
-      </div>
-      <!-- 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key -->
-      <div>
-          <input type="text" v-on:keydown.enter="value = $event.target.value">
-          <p>{‌{ value }}</p>
-      </div>
+  <div id="app">
+    <!-- v-model 2-way data binding (combine v-on and v-bind)
+     -->
+    <input type="text" v-model="name">
+    <p>{{ name }}</p>
   </div>
 
 
