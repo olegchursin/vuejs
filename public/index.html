@@ -10,12 +10,44 @@
 
 <body>
 
-  <div id="app">
-    <button v-on:click="count(2)">Add</button>
-    <p>{{ counter }}</p>
-    <p v-on:mouseMove='updateCoordinates'>Coordinates: x: {{ x }} y:{{ y }} - <span v-on:mousemove.stop="">DEAD SPOT</span></p>
-    <input type="text" name="" id="">
+  <div id="exercise">
+      <!-- 1) Show an alert when the Button gets clicked -->
+      <div>
+          <button v-on:click="alertTrigger">Show Alert</button>
+      </div>
+      <!-- 2) Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value) -->
+      <div>
+          <input type="text" v-on:keydown='onKeydown'>
+          <p>{{ value }}</p>
+      </div>
+      <!-- 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key -->
+      <div>
+          <input type="text" v-on:keydown.enter='onKeydownEnter'>
+          <p>{{ valueEn }}</p>
+      </div>
   </div>
+
+
+
+<!-- Instructor's solution -->
+
+  <div id="exercise">
+      <!-- 1) Show an alert when the Button gets clicked -->
+      <div>
+          <button v-on:click="alertMe">Show Alert</button>
+      </div>
+      <!-- 2) Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value) -->
+      <div>
+          <input type="text" v-on:keydown="value = $event.target.value">
+          <p>{‌{ value }}</p>
+      </div>
+      <!-- 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key -->
+      <div>
+          <input type="text" v-on:keydown.enter="value = $event.target.value">
+          <p>{‌{ value }}</p>
+      </div>
+  </div>
+
 
   <script src="../src/app.js"></script>
 </body>

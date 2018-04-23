@@ -1,20 +1,18 @@
 new Vue ({
-  el: '#app',
+  el: '#exercise',
   data: {
-    counter: 0,
-    x: 0,
-    y: 0
+    value: '',
+    valueEn: ''
   },
   methods: {
-    count: function(step) {
-      return this.counter += step;
+    alertTrigger: function() {
+      alert("Hey! Hey!");
     },
-    updateCoordinates: function(event) {
-      this.x = event.clientX;
-      this.y = event.clientY;
+    onKeydown: function(event) {
+      this.value = event.target.value;
     },
-    dummy: function(event) {
-      event.stopPropagation();
+    onKeydownEnter: function(event) {
+      this.valueEn = event.target.value;
     }
   }
 });
